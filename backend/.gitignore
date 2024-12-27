@@ -17,6 +17,9 @@
 .temp
 .tmp
 
+#sql
+database.sqlite
+
 # Runtime data
 pids
 *.pid

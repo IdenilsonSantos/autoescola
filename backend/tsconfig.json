@@ -31,14 +31,13 @@
     },
     "include": [
       "./src/**/*.ts",
-      "./test/**/*.ts", 
-      "index.ts"   
+      "**/*.test.ts",
+      "index.ts"
     ],
     "exclude": [
       "./node_modules/*",
       "dist",
       "./jest.config.ts",
-      "./tests",
-      "./build"
+      "./tests"
     ]
   }
