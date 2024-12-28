@@ -1,4 +1,5 @@
 export enum TableNames {
   user = "user",
-  class = "class"
+  class = "class",
+  user_classes = "user_classes"
 }

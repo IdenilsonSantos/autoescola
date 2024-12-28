@@ -1,19 +1,19 @@
 import { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
-import { classesProvider  } from "../../database/providers/classes";
+import { userClassesProvider  } from "../../database/providers/user_classes";
 
 export const getAll = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
   try {
-    const { page = 1, limit = 10, filter = "" } = req.query;
-    const result = await classesProvider.getAll(
+    const { page = 1, limit = 10, filter = 0 } = req.query;
+    const result = await userClassesProvider.getAll(
       Number(page),
       Number(limit),
-      String(filter)
+      Number(filter)
     );
-    const count: any = await classesProvider.count(String(filter));
+    const count: any = await userClassesProvider.count(Number(filter));
 
     if (result instanceof Error || count instanceof Error) {
       const errorMessage =
