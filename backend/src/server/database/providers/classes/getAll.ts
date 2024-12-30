@@ -9,6 +9,7 @@ export const getAll = async (page: number, limit: number, filter: string): Promi
       .select('*')
       .where('title', 'like', `%${filter}%`)
       .offset((page - 1) * limit)
+      .orderBy('id', 'desc')
       .limit(limit);
 
     return result;

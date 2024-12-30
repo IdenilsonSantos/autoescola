@@ -10,8 +10,8 @@ export const updateStatusById = async (
   try {
     const result = await Knex(TableNames.user_classes)
       .update(status)
-      .where("user_id", "=", user_id)
-      .andWhere("class_id", "=", class_id);
+      .where("user_id", "like", user_id)
+      .andWhere("class_id", "like", class_id);
 
     if (result > 0) return;
 

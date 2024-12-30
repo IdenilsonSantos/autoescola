@@ -20,6 +20,7 @@ router.delete("/classes/:id", asyncHandler(ClassesController.deleteById));
 
 // UserClasses
 router.post("/user_classes", asyncHandler(UserClassesController.create));
+router.post("/user_classes_many", asyncHandler(UserClassesController.createMany));
 router.get('/user_classes', asyncHandler(UserClassesController.getAll));
 router.get('/user_classes/:id', asyncHandler(UserClassesController.getById));
 router.get('/user_classes/user/:id', asyncHandler(UserClassesController.getByUserId));

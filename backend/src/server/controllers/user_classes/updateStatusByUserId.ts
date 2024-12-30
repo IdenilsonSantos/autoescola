@@ -23,6 +23,8 @@ export const updateStatusByUserId = async (
       req.body
     );
 
+    console.log(req.body, req.params)
+
     if (result instanceof Error) {
       return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
         errors: { default: result.message },
